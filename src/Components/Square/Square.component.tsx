@@ -1,33 +1,32 @@
 import React, { Component } from "react";
 
-import styled, { css } from "styled-components";
+import styled from 'styled-components/native'
 
 type MyProps = {
   value: number | string;
   onClick: () => void;
 };
-const ButtonContainer = styled.button`
+const ButtonWrapper = styled.TouchableOpacity`
   background: #fff;
   border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 80px;
+  height: 80px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
-  text-align: center;
-  width: 34px;
-  ${css`
-    &:focus {
-      outline: none;
-    }
-  `}
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+`;
+const ButtonText = styled.Text`
+  font-size: 40px;
+  font-weight: bold;
 `;
 
 export default function Square(props: MyProps) {
   return (
-    <ButtonContainer onClick={props.onClick}>{props.value}</ButtonContainer>
+    <ButtonWrapper onPress={props.onClick}>
+      <ButtonText>{props.value}</ButtonText>
+    </ButtonWrapper>
   );
 }

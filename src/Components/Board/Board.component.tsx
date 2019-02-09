@@ -1,17 +1,11 @@
 import React, { Component } from "react";
 import Square from "../Square";
-import styled, { css } from "styled-components";
-const BoardContainer = styled.div``;
-
-const BoardRow = styled.div`
-  ${css`
-    &:after {
-      clear: both;
-      content: "";
-      display: table;
-    }
-  `}
+import styled from 'styled-components/native'
+const BoardContainer = styled.View`
+  flex-direction: row;
 `;
+
+const BoardRow = styled.View``;
 type MyProps = {
   squares: string[];
   onClick: (i: number) => void;
